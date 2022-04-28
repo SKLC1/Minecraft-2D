@@ -3,7 +3,7 @@ const pickaxe = document.querySelector('#pickaxe')
 const axe = document.querySelector('#axe')
 const shovel = document.querySelector('#shovel')
 let using = 'hand';
-
+let last = 'sky';
 // tools implement
 const blockElements = document.querySelectorAll('.block');
 const blocksArr = [...blockElements];
@@ -20,6 +20,7 @@ const useShovel = () => {
         if(using==='shovel'){
         blocksArr[i].classList.replace('dirt','sky')
         minedBlocks ++;
+        last = 'dirt'
         }
       })
       // 
@@ -30,6 +31,7 @@ const useShovel = () => {
         if(using==='shovel'){
         blocksArr[i].classList.replace('grass','sky')
         minedBlocks ++;
+        last = 'grass'
         }
       })
       // 
@@ -66,6 +68,7 @@ const usePickaxe =()=>{
         if(using==='pickaxe'){
         blocksArr[i].classList.replace('stone','sky')
         minedBlocks ++;
+        last = 'stone';
         }
       })
       // 
@@ -75,4 +78,19 @@ const usePickaxe =()=>{
 
 pickaxe.addEventListener('click',usePickaxe);
 
+// place
+const skyElements = document.querySelectorAll('.sky');
+const skyArr = [...skyElements];
 
+const placeBlock =()=>{
+  for (let i = 0; i < skyArr.length; i++) {
+    skyArr[i].addEventListener('click', ()=>{
+      if(minedBlocks > 0){
+        skyArr[i].classList.replace('sky','block')
+        skyArr[i].classList.add(last)
+        minedBlocks--;
+      }
+    })
+  }
+}
+placeBlock()

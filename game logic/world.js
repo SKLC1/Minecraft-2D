@@ -33,7 +33,6 @@ function generateWorld () {
     for (let j = 0; j < matrix[i].length; j++) {
         if(matrix[i][j] === 0){
           let block = document.createElement('div');
-          block.classList.add('block')
           block.classList.add('sky')
           row.append(block)
         }
@@ -47,6 +46,10 @@ function generateWorld () {
   }
 }
 generateWorld()
+
+
+
+
 
 
 

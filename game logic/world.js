@@ -16,8 +16,11 @@ for (let i = 0; i < 5; i++) {
   for (let j = 0; j < 5; j++) {
     row.push(0)
   }
+  for (let j = 5; j < 6; j++) {
+    row.push(4)
+  }
   matrix.push(row)
-  for (let j = 5; j < 8; j++) {
+  for (let j = 7; j < 8; j++) {
     row.push(1)
   }
   matrix.push(row)
@@ -70,11 +73,17 @@ function generateWorld () {
           block.classList.add('stone')
           row.append(block)
         }
+        if(matrix[i][j] === 4){
+          let block = document.createElement('div');
+          block.classList.add('block')
+          block.classList.add('grass')
+          row.append(block)
+        }
+      }
     }
   }
-}
-generateWorld()
-
+  generateWorld()
+  
 
 
 

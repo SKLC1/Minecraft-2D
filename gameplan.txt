@@ -1,0 +1,21 @@
+1.create repo
+2.create HTML
+3.create CSS
+
+JS logic
+
+first solution strategy:
+1.matrix {create an object of data that represents the blocks}
+2.grid{iterate over a grid and generate blocks}
+
+world creattion:
+1.iterate over grid
+2.create div for each grid item
+3.diifrentiate between "sky" and "block" element.
+4.create a conditoin to give "dirt" attribute below
+grid line "x"
+5.add math random to create some "rock"
+?? find a way to add a tree.
+
+tools implementation
+??

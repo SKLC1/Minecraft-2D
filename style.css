@@ -1,4 +1,8 @@
-
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .main-container{
   display: flex;
 }
@@ -9,7 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotate(90deg);
+  /* transform: rotate(90deg); */
 }
 .sidebar{
   height: 80vh;
@@ -43,14 +47,15 @@
 .block{
   width: 5vh;
   height: 5vh;
+  box-sizing: border-box;
+  transform: rotate(-90deg);
 }
 .block:hover{
-  box-sizing: border-box;
   border: orangered 1px solid;
 }
 .dirt{
-  background: url('./images/266df7ab6322509273a9cddeeee5a3e7.jpg') no-repeat center center/cover;
+  background: url('./images/266df7ab6322509273a9cddeeee5a3e7.jpg') center center/cover;
 }
 .stone{
-  color: gray;
+  background: url('./images/e9904cdb30314092a60f1ec18711bbbf.jpg') center center/cover;
 }

@@ -43,16 +43,24 @@ console.log(matrix);
 
 const generateTree = () =>{
   let generationPlace = (Math.floor(Math.random() * (15 - 1)) + 1);
+  let chanceForTreeTwo = (Math.floor(Math.random() * (6 - 1)) + 1);
   let treeRow = matrix[generationPlace]
+  // leaves
   for (let i = 2; i < 4; i++) {
     if (treeRow[i] === 0) {
-      treeRow[i] = 6
+      matrix[generationPlace-1][i] = 6
+      matrix[generationPlace][i] = 6
+      matrix[generationPlace+1][i] = 6
     }
   }
+  // wood
   for (let i = 3; i < 6; i++) {
     if (treeRow[i] === 0) {
       treeRow[i] = 5
     }
+  }
+  if (chanceForTreeTwo == 3 && chanceForTreeTwo !== generationPlace) {
+    generateTree()
   }
 }
 generateTree()

@@ -30,7 +30,15 @@
   height: 10vh;
   border: solid;
 }
-
+.lastMined{
+  border: solid;
+  width: 50px;
+  height: 50px;
+  align-self: center;
+}
+.none{
+  background-color: red;
+}
 /* blocks */
 .world-row{
   
@@ -61,4 +69,10 @@
 }
 .stone{
   background: url('./images/e9904cdb30314092a60f1ec18711bbbf.jpg') center center/cover;
+}
+.wood{
+  background: url('./images/Oak_Log_\(texture\)_JE4_BE2.webp') center center/cover;
+}
+.leaves{
+  background: url('./images/leaves.jpg') center center/cover;
 }

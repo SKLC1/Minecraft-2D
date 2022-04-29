@@ -3,13 +3,14 @@ const pickaxe = document.querySelector('#pickaxe')
 const axe = document.querySelector('#axe')
 const shovel = document.querySelector('#shovel')
 let using = 'hand';
-let last = 'sky';
+let mined = []
 // tools implement
 const blockElements = document.querySelectorAll('.block');
 const blocksArr = [...blockElements];
-let minedBlocks = 0;
+// 
 
 
+// 
 const useShovel = () => {
   using = 'shovel'
   console.log(using);
@@ -17,10 +18,10 @@ const useShovel = () => {
     if (blocksArr[i].classList == 'block dirt') {
       //  
       blocksArr[i].addEventListener('click',()=>{
-        if(using==='shovel'){
+        if(using==='shovel' && !(blocksArr[i].className.includes('sky'))){
         blocksArr[i].classList.replace('dirt','sky')
-        minedBlocks ++;
-        last = 'dirt'
+        mined.push('dirt')
+        console.log(mined);
         }
       })
       // 
@@ -28,10 +29,10 @@ const useShovel = () => {
     if (blocksArr[i].classList == 'block grass') {
       //  
       blocksArr[i].addEventListener('click',()=>{
-        if(using==='shovel'){
+        if(using==='shovel' && !(blocksArr[i].className.includes('sky'))){
         blocksArr[i].classList.replace('grass','sky')
-        minedBlocks ++;
-        last = 'grass'
+        mined.push('grass')
+        console.log(mined);
         }
       })
       // 
@@ -47,9 +48,9 @@ const useAxe = () => {
     if (blocksArr[i].classList == 'block wood') {
       //  
       blocksArr[i].addEventListener('click',()=>{
-        if(using==='axe'){
+        if(using==='axe' && !(blocksArr[i].className.includes('sky'))) {
         blocksArr[i].classList.replace('wood','sky')
-        minedBlocks ++;
+        mined.push('wood')
         }
       })
       // 
@@ -65,17 +66,18 @@ const usePickaxe =()=>{
     if (blocksArr[i].classList == 'block stone') {
       //  
       blocksArr[i].addEventListener('click',()=>{
-        if(using==='pickaxe'){
-        blocksArr[i].classList.replace('stone','sky')
-        minedBlocks ++;
-        last = 'stone';
+        if(using==='pickaxe' && !(blocksArr[i].className.includes('sky'))){
+          blocksArr[i].classList.replace('stone','sky')
+          blocksArr[i].classList.replace('block','sky')
+          mined.push('stone')
+          console.log(mined);
+          lastMined.classList.add(mined)
         }
       })
       // 
     }
   }
 }
-
 pickaxe.addEventListener('click',usePickaxe);
 
 // place
@@ -85,12 +87,19 @@ const skyArr = [...skyElements];
 const placeBlock =()=>{
   for (let i = 0; i < skyArr.length; i++) {
     skyArr[i].addEventListener('click', ()=>{
-      if(minedBlocks > 0){
+      if(skyArr[i].className.includes('sky') && mined.length > 0){
         skyArr[i].classList.replace('sky','block')
-        skyArr[i].classList.add(last)
-        minedBlocks--;
+        skyArr[i].classList.add(mined[mined.length-1])
+        mined.pop() 
+        console.log(mined);
+        if(mined.length === 0) {
+          lastMined.className = "lastMined";
+        }
       }
     })
   }
 }
 placeBlock()
+
+// last mined 
+const lastMined = document.querySelector('.lastMined');

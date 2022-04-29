@@ -4,6 +4,7 @@ const axe = document.querySelector('#axe')
 const shovel = document.querySelector('#shovel')
 let using = 'hand';
 let mined = []
+let lastListCur = mined.reverse()
 // tools implement
 const blockElements = document.querySelectorAll('.block');
 const blocksArr = [...blockElements];
@@ -22,6 +23,8 @@ const useShovel = () => {
         blocksArr[i].classList.replace('dirt','sky')
         mined.push('dirt')
         console.log(mined);
+        lastMined.className ='lastMined';
+        lastMined.classList.add(mined[mined.length-1])
         }
       })
       // 
@@ -33,6 +36,8 @@ const useShovel = () => {
         blocksArr[i].classList.replace('grass','sky')
         mined.push('grass')
         console.log(mined);
+        lastMined.className ='lastMined';
+        lastMined.classList.add(mined[mined.length-1])
         }
       })
       // 
@@ -51,6 +56,8 @@ const useAxe = () => {
         if(using==='axe' && !(blocksArr[i].className.includes('sky'))) {
         blocksArr[i].classList.replace('wood','sky')
         mined.push('wood')
+        lastMined.className ='lastMined';
+        lastMined.classList.add(mined[mined.length-1])
         }
       })
       // 
@@ -71,7 +78,8 @@ const usePickaxe =()=>{
           blocksArr[i].classList.replace('block','sky')
           mined.push('stone')
           console.log(mined);
-          lastMined.classList.add(mined)
+          lastMined.className ='lastMined';
+          lastMined.classList.add(mined[mined.length-1])
         }
       })
       // 
@@ -83,6 +91,7 @@ pickaxe.addEventListener('click',usePickaxe);
 // place
 const skyElements = document.querySelectorAll('.sky');
 const skyArr = [...skyElements];
+const lastMined = document.querySelector('.lastMined');
 
 const placeBlock =()=>{
   for (let i = 0; i < skyArr.length; i++) {
@@ -93,7 +102,10 @@ const placeBlock =()=>{
         mined.pop() 
         console.log(mined);
         if(mined.length === 0) {
-          lastMined.className = "lastMined";
+          lastMined.className ='lastMined';
+        } else if (mined.length > 0){
+          lastMined.className ='lastMined';
+          lastMined.classList.add(mined[mined.length-1])
         }
       }
     })
@@ -102,4 +114,3 @@ const placeBlock =()=>{
 placeBlock()
 
 // last mined 
-const lastMined = document.querySelector('.lastMined');

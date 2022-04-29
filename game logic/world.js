@@ -11,42 +11,51 @@ const blocks ={
 }
 let matrix = []
 
-let tree = [
-  [0, 0, 0, 0, 0, 4, 1, 1, 1, 2, 2, 2, 2, 2]
-  [0, 0, 0, 0, 0, 4, 1, 1, 1, 2, 2, 2, 2, 2]
-  [0, 0, 0, 0, 0, 4, 1, 1, 1, 2, 2, 2, 2, 2]
-]
-
 // world size by rows
 const generateTerrain = () => {
- for (let i = 0; i < 5; i++) {
-  let row = []
-  matrix.push(row)
-  // sky
-  for (let j = -0; j < 5; j++) {
+  for (let i = 0; i < 20; i++) {
+    let row = []
+    // sky
+    for (let i = 0; i < 6; i++) {
     row.push(0)
   }
   // grass
-  for (let j = 5; j < 6; j++) {
+  for (let i = 0; i < 1; i++) {
     row.push(4)
   }
   // dirt
-  matrix.push(row)
-  for (let j = 7; j < 8; j++) {
+  for (let i = 0; i < 2; i++) {
     row.push(1)
   }
-  matrix.push(row)
-  for (let j = 8; j < 11; j++) {
+  // stone dirt mix
+  for (let i = 0; i < 3; i++) {
     row.push(Math.floor(Math.random() * (3 - 1)) + 1)
   }
-  matrix.push(row)
-  for (let j = 11; j < 15; j++) {
+  for (let i = 0; i < 3; i++) {
     row.push(2)
   }
- }
+  matrix.push(row)
 }
+}
+//  tree generation
 generateTerrain()
 console.log(matrix);
+
+const generateTree = () =>{
+  let generationPlace = (Math.floor(Math.random() * (15 - 1)) + 1);
+  let treeRow = matrix[generationPlace]
+  for (let i = 2; i < 4; i++) {
+    if (treeRow[i] === 0) {
+      treeRow[i] = 6
+    }
+  }
+  for (let i = 3; i < 6; i++) {
+    if (treeRow[i] === 0) {
+      treeRow[i] = 5
+    }
+  }
+}
+generateTree()
 
 // world generation
 function generateWorld () {
@@ -94,7 +103,7 @@ function generateWorld () {
     }
   }
   generateWorld()
-  
+
 
 
 

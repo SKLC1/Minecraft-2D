@@ -4,9 +4,8 @@ const axe = document.querySelector('#axe')
 const shovel = document.querySelector('#shovel')
 const hand = document.querySelector('#hand')
 let using = 'hand';
-let selectedTool = [hand]
-let mined = []
-let lastListCur = mined.reverse()
+let selectedTool = [hand];
+let mined = [];
 // tools implement
 const blocksArr2 = document.querySelectorAll('.world-row div') 
 const allBlocks = [...blocksArr2]

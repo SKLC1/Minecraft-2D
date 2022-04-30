@@ -27,6 +27,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
 }
 .tools-item{
   width: 100px;
@@ -38,6 +39,21 @@ body{
   width: 50px;
   height: 50px;
   align-self: center;
+}
+.reset{
+  width: fit-content;
+  height: fit-content;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #76A8FF;
+  color: #000;
+  text-align: center;
+  border: solid;
+  padding: 5px 10px;
+  margin: 5px;
+}
+.reset:hover{
+ transform:scale(110%);
+ cursor: pointer;
 }
 #pickaxe{
   background: url('./images/Iron_Pickaxe_JE3_BE2.webp') no-repeat center center/cover ;
@@ -87,6 +103,9 @@ body{
 .leaves{
   background: url('./images/leaves.jpg') center center/cover;
 }
+.cloud{
+  background-color: white;
+}
 
 @media (max-width: 1200px) {
   .main-container{
@@ -113,5 +132,8 @@ body{
 }
 /* welcome menu */
 .menu{
-  background-image: url();
+  background: url('./images/background-minecraft.jpg') no-repeat center center/cover;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
 }

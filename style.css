@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  background-color: #76A8FF;
+}
 .main-container{
   display: flex;
 }
@@ -36,11 +39,19 @@
   height: 50px;
   align-self: center;
 }
+#pickaxe{
+  background: url('./images/Iron_Pickaxe_JE3_BE2.webp') no-repeat center center/cover ;
+}
+#axe {
+  background: url('./images/Iron_Axe_JE5_BE2.webp') no-repeat center center/cover ;
+
+}
+#shovel {
+  background: url('./images/Iron_Shovel_JE3_BE2.webp') no-repeat center center/cover ;
+
+}
 
 /* blocks */
-.world-row{
-  
-}
 .sky{
   background-color: #76A8FF;
   width: 5vh;

@@ -6,8 +6,13 @@
 body{
   background-color: #76A8FF;
 }
+@font-face {
+  font-family: minecraft;
+  src: url('./fonts/Minecraftia-Regular.ttf');
+}
 .main-container{
   display: flex;
+  display: none;
 }
 
 .minecraft-container{
@@ -43,7 +48,7 @@ body{
 .reset{
   width: fit-content;
   height: fit-content;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: minecraft;
   background-color: #76A8FF;
   color: #000;
   text-align: center;
@@ -132,8 +137,37 @@ body{
 }
 /* welcome menu */
 .menu{
-  background: url('./images/background-minecraft.jpg') no-repeat center center/cover;
+  background: url('https://i.ibb.co/bH3JY30/IE1G7Lr.png') no-repeat center center/cover;
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  height: 120vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+.minecraft-logo{
+  width: 40vh;
+  height: 20vh;
+  background: url('https://logolook.net/wp-content/uploads/2021/06/Minecraft-Logo.png') no-repeat center center/cover;
+}
+.start {
+  text-align: center;
+  color: #fff;
+  font-family: minecraft;
+  width: 200px;
+  height: 30px;
+  background: #999 url('https://i.ibb.co/rb2TWXL/bgbtn.png') center / cover;
+  border: solid 1px;
+  margin: 10px;
+  cursor: pointer;
+}
+.inst{
+  width: 80vw;
+  position: absolute;
+  left: 0;
+}
+
+
+
+

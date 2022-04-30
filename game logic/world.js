@@ -27,6 +27,7 @@ const generateTerrain = () => {
   for (let i = 0; i < 3; i++) {
     row.push(Math.floor(Math.random() * (3 - 1)) + 1)
   }
+  // stone
   for (let i = 0; i < 3; i++) {
     row.push(2)
   }
@@ -38,9 +39,10 @@ generateTerrain()
 console.log(matrix);
 
 
+// terran extras
+let generationPlace = (Math.floor(Math.random() * (15 - 1)) + 1);
 
 const generateTree = () =>{
-  let generationPlace = (Math.floor(Math.random() * (15 - 1)) + 1);
   let chanceForTreeTwo = (Math.floor(Math.random() * (6 - 1)) + 1);
   let treeRow = matrix[generationPlace]
   // leaves
@@ -62,6 +64,7 @@ const generateTree = () =>{
   }
 }
 generateTree()
+
 
 
 // world generation
@@ -111,8 +114,7 @@ function generateWorld () {
   }
   generateWorld()
 
-
-  
+   
   // reset button
   const reset = document.querySelector('.reset')
   

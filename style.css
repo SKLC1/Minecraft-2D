@@ -48,7 +48,9 @@ body{
 }
 #shovel {
   background: url('./images/Iron_Shovel_JE3_BE2.webp') no-repeat center center/cover ;
-
+}
+.selected-tool{
+  border: solid rgb(255, 201, 101) 3px;
 }
 
 /* blocks */
@@ -108,4 +110,8 @@ body{
   .tools-item{
     margin: 10px;
   } 
+}
+/* welcome menu */
+.menu{
+  background-image: url();
 }

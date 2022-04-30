@@ -4,6 +4,7 @@ const axe = document.querySelector('#axe')
 const shovel = document.querySelector('#shovel')
 const hand = document.querySelector('#hand')
 let using = 'hand';
+let selectedTool = [hand]
 let mined = []
 let lastListCur = mined.reverse()
 // tools implement
@@ -13,24 +14,33 @@ const allBlocks = [...blocksArr2]
 // tool select
 const usePickaxe =()=>{
   using = 'pickaxe'
-  console.log(using);
+  selectedTool.push(pickaxe);
+  highlightTool()
 }
 pickaxe.addEventListener('click',usePickaxe);
 const useShovel =()=>{
   using = 'shovel'
-  console.log(using);
+  selectedTool.push(shovel);
+  highlightTool()
 }
 shovel.addEventListener('click',useShovel);
 const useAxe =()=>{
   using = 'axe'
-  console.log(using);
+  selectedTool.push(axe);
+  highlightTool()
 }
 axe.addEventListener('click',useAxe);
 const useHand =()=>{
   using = 'hand'
-  console.log(using);
+  selectedTool.push(hand);
+  highlightTool()
 }
 hand.addEventListener('click',useHand);
+
+const highlightTool = () =>{
+  selectedTool[selectedTool.length-1].classList.add('selected-tool')
+  selectedTool[selectedTool.length-2].classList.remove('selected-tool')
+}
 
 // mine function
 let toolsArr = ['pickaxe','shovel','shovel','axe','axe']

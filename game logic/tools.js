@@ -16,11 +16,12 @@ const useShovel = () => {
   using = 'shovel'
   console.log(using);
   for (let i = 0; i < blocksArr.length; i++) {
-    if (blocksArr[i].classList == 'block dirt') {
+    if (blocksArr[i].className == 'block dirt') {
       //  
       blocksArr[i].addEventListener('click',()=>{
         if(using==='shovel' && !(blocksArr[i].className.includes('sky'))){
         blocksArr[i].classList.replace('dirt','sky')
+        blocksArr[i].classList.remove('block')
         mined.push('dirt')
         console.log(mined);
         lastMined.className ='lastMined';
@@ -29,11 +30,12 @@ const useShovel = () => {
       })
       // 
     }
-    if (blocksArr[i].classList == 'block grass') {
+    if (blocksArr[i].className == 'block grass') {
       //  
       blocksArr[i].addEventListener('click',()=>{
         if(using==='shovel' && !(blocksArr[i].className.includes('sky'))){
         blocksArr[i].classList.replace('grass','sky')
+        blocksArr[i].classList.remove('block')
         mined.push('grass')
         console.log(mined);
         lastMined.className ='lastMined';
@@ -50,12 +52,23 @@ const useAxe = () => {
   using = 'axe'
   console.log(using);
   for (let i = 0; i < blocksArr.length; i++) {
-    if (blocksArr[i].classList == 'block wood') {
-      //  
+    if (blocksArr[i].className == 'block wood') {  
       blocksArr[i].addEventListener('click',()=>{
         if(using==='axe' && !(blocksArr[i].className.includes('sky'))) {
         blocksArr[i].classList.replace('wood','sky')
+        blocksArr[i].classList.remove('block')
         mined.push('wood')
+        lastMined.className ='lastMined';
+        lastMined.classList.add(mined[mined.length-1])
+        }
+      })
+    }
+    if (blocksArr[i].className == 'block leaves') {
+      blocksArr[i].addEventListener('click',()=>{
+        if(using==='axe' && !(blocksArr[i].className.includes('sky'))) {
+        blocksArr[i].classList.replace('leaves','sky')
+        blocksArr[i].classList.remove('block')
+        mined.push('leaves')
         lastMined.className ='lastMined';
         lastMined.classList.add(mined[mined.length-1])
         }
@@ -70,12 +83,12 @@ const usePickaxe =()=>{
   using = 'pickaxe'
   console.log(using);
   for (let i = 0; i < blocksArr.length; i++) {
-    if (blocksArr[i].classList == 'block stone') {
+    if (blocksArr[i].className == 'block stone') {
       //  
       blocksArr[i].addEventListener('click',()=>{
         if(using==='pickaxe' && !(blocksArr[i].className.includes('sky'))){
           blocksArr[i].classList.replace('stone','sky')
-          blocksArr[i].classList.replace('block','sky')
+          blocksArr[i].classList.remove('block')
           mined.push('stone')
           console.log(mined);
           lastMined.className ='lastMined';

@@ -17,7 +17,7 @@ body{
 
 .minecraft-container{
   width: 80vw;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,7 +88,6 @@ body{
   width: 5vh;
   height: 5vh;
   box-sizing: border-box;
-  /* transform: rotate(-90deg); */
 }
 .block:hover{
   border: orangered 1px solid;
@@ -112,6 +111,39 @@ body{
   background-color: white;
 }
 
+/* welcome menu */
+.menu{
+  background: url('https://i.ibb.co/bH3JY30/IE1G7Lr.png') no-repeat center center/cover;
+  position: absolute;
+  width: 100vw;
+  height: 120vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.minecraft-logo{
+  width: 60vh;
+  height: 30vh;
+  background: url('https://logolook.net/wp-content/uploads/2021/06/Minecraft-Logo.png') no-repeat center center/cover;
+}
+.start {
+  text-align: center;
+  color: #fff;
+  font-family: minecraft;
+  width: 200px;
+  height: 30px;
+  background: #999 url('https://i.ibb.co/rb2TWXL/bgbtn.png') center / cover;
+  border: solid 1px;
+  margin: 10px;
+  cursor: pointer;
+}
+.inst{
+  width: 80vw;
+  position: absolute;
+  left: 5vw;
+}
+/* media */
 @media (max-width: 1200px) {
   .main-container{
     flex-direction: column;
@@ -133,41 +165,15 @@ body{
   }
   .tools-item{
     margin: 10px;
+    width: 50px;
+    height: 50px;
   } 
+  .minecraft-logo{
+    width: 40vh;
+    height: 20vh;
+    background: url('https://logolook.net/wp-content/uploads/2021/06/Minecraft-Logo.png') no-repeat center center/cover;
+  }
 }
-/* welcome menu */
-.menu{
-  background: url('https://i.ibb.co/bH3JY30/IE1G7Lr.png') no-repeat center center/cover;
-  position: absolute;
-  width: 100vw;
-  height: 120vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.minecraft-logo{
-  width: 40vh;
-  height: 20vh;
-  background: url('https://logolook.net/wp-content/uploads/2021/06/Minecraft-Logo.png') no-repeat center center/cover;
-}
-.start {
-  text-align: center;
-  color: #fff;
-  font-family: minecraft;
-  width: 200px;
-  height: 30px;
-  background: #999 url('https://i.ibb.co/rb2TWXL/bgbtn.png') center / cover;
-  border: solid 1px;
-  margin: 10px;
-  cursor: pointer;
-}
-.inst{
-  width: 80vw;
-  position: absolute;
-  left: 0;
-}
-
 
 
 

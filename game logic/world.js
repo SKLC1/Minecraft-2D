@@ -4,7 +4,6 @@
 const grid = document.querySelector('.minecraft-container');
 
 // world matrix data
-
 let matrix = []
 
 // world size by rows
@@ -40,9 +39,9 @@ console.log(matrix);
 
 
 // terran extras
-let generationPlace = (Math.floor(Math.random() * (15 - 1)) + 1);
 
 const generateTree = () =>{
+  let generationPlace = (Math.floor(Math.random() * (15 - 1)) + 1);
   let chanceForTreeTwo = (Math.floor(Math.random() * (6 - 1)) + 1);
   let treeRow = matrix[generationPlace]
   // leaves
@@ -65,9 +64,10 @@ const generateTree = () =>{
 }
 generateTree()
 
-
-
 // world generation
+let blockNum = [1,2,3,4,5,6]
+let blockType = ['dirt','stone','grass','wood','leaves']
+
 function generateWorld () {
   for (let i = 0; i < matrix.length; i++) {
       let row = document.createElement('div')
@@ -114,19 +114,20 @@ function generateWorld () {
   }
   generateWorld()
 
-   
-  // reset button
-  const reset = document.querySelector('.reset')
+// reset button
+// ! switch to refresh
+const reset = document.querySelector('.reset')
   
-  const resetWorld = () => {
+const resetWorld = () => {
   const worldRow = document.querySelectorAll('.world-row')
   const worldRowArr = [...worldRow]
   
   worldRowArr.forEach((worldBlock)=> worldBlock.remove());
-  matrix = [];
-  generateTerrain()
-  generateTree()
-  generateWorld()
+  location.reload()
+  // matrix = [];
+  // generateTerrain()
+  // generateTree()
+  // generateWorld()
 }
 reset.addEventListener('click', resetWorld)
 

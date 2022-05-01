@@ -1,5 +1,5 @@
-// tools
 
+// tools
 const pickaxe = document.querySelector('#pickaxe')
 const axe = document.querySelector('#axe')
 const shovel = document.querySelector('#shovel')
